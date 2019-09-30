@@ -9,28 +9,31 @@ SimuladorDeEntradas::SimuladorDeEntradas(DetectorDeRequerimientos * btn, char * 
 {
     filename = file;
     boton = btn;
+    filebuffer.open(filename);
 }
 
 void SimuladorDeEntradas::actionPerformed()
 {   
-    ifstream filebuffer;
-    filebuffer.open(filename);
+    
     string tmp;
-    while(!filebuffer.eof())
+    if(!filebuffer.eof())
     {
         getline(filebuffer,tmp);
         if(tmp == "1")
         {
-            cout<< "requerimiento del boton "<<endl;
+            //cout<< "requerimiento del boton \n";
             boton->setOn();
         }    
-        else if( tmp == "0")
-            cout<<"boton apagado "<<endl;
+        //else if( tmp == "0")
+            //out<<"boton apagado \n";
             // if(boton->isON())
-            //     boton->setOff();
-        sleep(1);          
+            //     boton->setOff();          
     }
-    
-    cout<<"lei todo el archivo"<<endl;
-    exit(0);
+    else
+    {
+      filebuffer.close();
+      cout << tmp << endl;
+      cout<<"lei todo el archivo"<<endl;
+      exit(0);
+    }
 }

@@ -5,7 +5,7 @@ SemaforoG::SemaforoG(int gt, int tt):TrafficLight(gt,tt)
     state = 0;
 };
 
-int SemaforoG::getGreenTime()
+int SemaforoG::getGreenLightTime()
 {
     return TrafficLight::getGreenTime();
 }

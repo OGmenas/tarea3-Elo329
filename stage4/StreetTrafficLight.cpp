@@ -2,16 +2,16 @@
 
 
 
- StreetTrafficLight::StreetTrafficLight():TrafficLight(3) 
+ StreetTrafficLight::StreetTrafficLight():TrafficLight(3,3) 
 {
     state = 0;
 }
 
- StreetTrafficLight::StreetTrafficLight(int redTime):TrafficLight(redTime)
+ StreetTrafficLight::StreetTrafficLight(int gt, int tt):TrafficLight(gt ,tt)
 {
     state = 0;
 }
-string StreetTrafficLight::toString()
+string StreetTrafficLight::ToString()
 {
     state = TrafficLight::getState();
     switch (state)

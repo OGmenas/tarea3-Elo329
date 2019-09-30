@@ -18,25 +18,28 @@ private:
 	StreetTrafficLight * semaf3;
 	SemaforoG * semaf4;
 	StreetTrafficLight * semaf5;
-    int greenTimeSemPA;
-	int greenTimeSemPB;
-	int greenTimeSemaforo1;
-	int greenTimeSemaforo2;
-	int greenTimeSemaforo3;
-	int greenTimeSemaforo4;
-	int greenTimeSemaforo5;
-	int yellowTimeSemaforo1;
-	int yellowTimeSemaforo3;
-	int yellowTimeSemaforo5;
-	int transitionTimeSemapA;
-	int transitionTimeSemapB;
-	int transitionTimeSemaf2;
-	int transitionTimeSemaf4;
+	int tiempo = 0;
+    // int greenTimeSemPA;
+	// int greenTimeSemPB;
+	// int greenTimeSemaforo1;
+	// int greenTimeSemaforo2;
+	// int greenTimeSemaforo3;
+	// int greenTimeSemaforo4;
+	// int greenTimeSemaforo5;
+	// int yellowTimeSemaforo1;
+	// int yellowTimeSemaforo3;
+	// int yellowTimeSemaforo5;
+	// int transitionTimeSemapA;
+	// int transitionTimeSemapB;
+	// int transitionTimeSemaf2;
+	// int transitionTimeSemaf4;
 
 public:
     controlador(SemaforoP * semPA,SemaforoP *semPB,StreetTrafficLight * semaforo1,SemaforoG * semaforo2, StreetTrafficLight * semaforo3
     ,SemaforoG * semaforo4,StreetTrafficLight *semaforo5,DetectorDeRequerimientos * btn, DetectorDeRequerimientos * sensor);
-    void manageTraffic();
+    void matrizCasos();
+	void manageTraffic();
+
 };
 
 

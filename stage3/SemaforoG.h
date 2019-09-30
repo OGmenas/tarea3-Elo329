@@ -15,7 +15,7 @@ public:
     void turnGreenLightOn();
     void turnGreenLightOff();
     void turnRedLightOn();
-    int getGreenTime();
+    int getGreenLightTime();
     int getTransitionTime();
     string ToString();
 

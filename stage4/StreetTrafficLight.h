@@ -13,8 +13,8 @@ private:
      int state;
 public:
      StreetTrafficLight();
-     StreetTrafficLight(int redTime);
-     string toString();
+     StreetTrafficLight(int gt,int tt);
+     string ToString();
 };
 
 

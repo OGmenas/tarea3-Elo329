@@ -2,10 +2,10 @@
 
 #include<unistd.h>
 
-controlador::controlador(SemaforoG * semG , DetectorDeRequerimientos * sensor)
+controlador::controlador(SemaforoG * semG , DetectorDeRequerimientos * snsr)
 {
     semg = semG;
-    sensor =  sensor;
+    sensor =  snsr;
     tiempo = 0;
    
 
@@ -15,12 +15,12 @@ void controlador::manageTraffic()
 {
         while(true)
         {   
-            cout<<"aun no entro "<<endl;
+            //cout<<"aun no entro "<<endl;
             if (sensor->isON())
             {
-                cout<< "capto una entrada "<<endl;
+                //cout<< "capto una entrada "<<endl;
                 semg->turnGreenLightOn();
-                for (int i = 0; i < semg->getGreenTime(); i++)
+                for (int i = 0; i < semg->getGreenLightTime(); i++)
                 {
                     cout<< tiempo << "  " << semg->ToString()<<endl;
                     sleep(1);
@@ -40,12 +40,9 @@ void controlador::manageTraffic()
                 sleep(1);
                 tiempo++;
                 sensor->setOff();
-                
-                
             }
             else
             {
-                cout<<"no capto nada"<<endl;
                 cout<<tiempo<<"  "<<semg->ToString()<<endl;
                 sleep(1);
                 tiempo++;

@@ -9,13 +9,13 @@ using namespace std;
 class SimuladorDeEntradas : public Listener
 {
 private:
-    DetectorDeRequerimientos * boton;
+    DetectorDeRequerimientos * boton, *sensor;
     char* filename;
     ifstream filebuffer;
     int cant_entradas;
 
 public:
-    SimuladorDeEntradas(DetectorDeRequerimientos * boton , char* filename);
+    SimuladorDeEntradas(DetectorDeRequerimientos * button ,DetectorDeRequerimientos * sensorInductivo, char * file);
     void actionPerformed();
 };
 

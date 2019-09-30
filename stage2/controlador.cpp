@@ -12,9 +12,11 @@ void controlador::manageTraffic()
 {
     while(true)
     {   
+      	//cout << tiempo << "\t" << semp->ToString() << endl;
+        
         if (boton->isON())
         {
-            cout<< "capto una entrada "<<endl;
+            //cout<< "capto una entrada "<<endl;
             semp->turnGreenLightOn();
             for (int i = 0; i < semp->getGreenLightTime(); i++)
             {
@@ -43,6 +45,5 @@ void controlador::manageTraffic()
             sleep(1);
             tiempo++;
         }
-    //cout<< "El problema de las R es aquí mismito" << endl;
     }
 };

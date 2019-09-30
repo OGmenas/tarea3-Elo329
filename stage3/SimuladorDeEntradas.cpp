@@ -9,49 +9,33 @@ SimuladorDeEntradas::SimuladorDeEntradas(DetectorDeRequerimientos * sensorInduct
 {
     filename = file;
     sensor = sensorInductivo;
-    int cant_entradas=0;
+    filebuffer.open(filename);
 
 }
 
 void SimuladorDeEntradas::actionPerformed()
 {   
 
-    ifstream filebuffer;
-    filebuffer.open(filename);
     string tmp;
-    while(!filebuffer.eof())
+    if(!filebuffer.eof())
     {
         getline(filebuffer,tmp);
         if(tmp == "1")
         {
-            cout<< "requerimiento del sensor "<<endl;
+        //    cout<< "requerimiento del sensor "<<endl;
             sensor->setOn();
         }    
-        else if( tmp == "0")
-            cout<<"sensor inactivo "<<endl;
-            // if(sensor->isON())
-            //     sensor->setOff();
-        sleep(1);          
+        // else if( tmp == "0")
+        //     cout<<"sensor inactivo "<<endl;
+        //     // if(sensor->isON())
+        //     //     sensor->setOff();      
     }
-    
-    cout<<"lei todo el archivo"<<endl;
-    exit(0);    
-    // ifstream filebuffer;
-    // string tmp;
-    // filebuffer.open(filename);
-    // while(!filebuffer.eof())
-    // {
-    //     getline(filebuffer,tmp);
-    //     if(tmp == "1")
-    //     {
-    //     cout<< "requerimiento del sensor "<<endl;
-    //     sensor->setOn();
-    //     }    
-    //     else if( tmp == "0")
-    //         cout<<"sensor apagado "<<endl;
-    //         // if(boton->isON())
-    //         //     boton->setOff();          
-    // }
-    // cout<<"lei todo el archivo"<<endl;
-    // exit(0);
+    else
+    {
+            filebuffer.close();
+            cout<<tmp<<endl;
+            cout<<"lei todo el archivo "<<endl;
+            exit(0);
+    }
+      
 }
